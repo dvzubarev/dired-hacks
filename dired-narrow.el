@@ -147,7 +147,7 @@ exit minibuffer and call dired-narrow-exit-action")
 (defun dired-narrow--restore ()
   "Restore the invisible files of the current buffer."
   (let ((inhibit-read-only t))
-    (remove-text-properties (point-min) (point-max) '(invisible))
+    (set-text-properties (point-min) (point-max) '())
     (when (fboundp 'dired-insert-set-properties)
       (dired-insert-set-properties (point-min) (point-max)))))
 
