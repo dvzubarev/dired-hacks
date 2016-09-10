@@ -494,6 +494,8 @@ when there is only one file left while narrowing.
 In order to enable this feature, add `(setq dired-narrow-exit-when-1-left t)` to your config.
 It makes sense when you use find-file as your exit action, e.g.
 `(setq dired-narrow-exit-action 'dired-narrow-find-file)`.
+Add `(setq dired-narrow-enable-blinking t)` to your config
+to enable quick highlighting of a chosen file before executing `dired-narrow-exit-action`.
 
 
 These narrowing functions are provided:
