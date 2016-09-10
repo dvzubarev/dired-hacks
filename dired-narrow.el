@@ -171,15 +171,14 @@ Units are seconds."
 
 
 (defun dired-narrow--blink-current-file ()
-  (save-excursion
-    (let* ((beg (or (move-beginning-of-line 1) (point)))
-           (end (or (move-end-of-line 1) (point)))
-           (overlay (make-overlay beg end)))
-      (overlay-put overlay 'face 'dired-narrow-blink)
-      (redisplay)
-      (sleep-for dired-narrow-blink-time)
-      (discard-input)
-      (delete-overlay overlay))))
+  (let* ((beg (line-beginning-position))
+         (end (line-end-position))
+         (overlay (make-overlay beg end)))
+    (overlay-put overlay 'face 'dired-narrow-blink)
+    (redisplay)
+    (sleep-for dired-narrow-blink-time)
+    (discard-input)
+    (delete-overlay overlay)))
 
 
 ;; Live filtering
