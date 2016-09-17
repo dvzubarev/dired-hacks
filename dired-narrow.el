@@ -100,7 +100,7 @@ we should act on."
 exit minibuffer and call dired-narrow-exit-action."
   :group 'dired-narrow)
 
-(defcustom dired-narrow-enable-blinking dired-narrow-exit-when-1-left
+(defcustom dired-narrow-enable-blinking t
   "If set to true highlight the chosen file shortly.
 This feature works only when dired-narrow-exit-when-1-left is true."
   :group 'dired-narrow)
